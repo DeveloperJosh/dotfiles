@@ -1,0 +1,66 @@
+* {
+    font-family: "JetBrainsMono Nerd Font", "Symbols Nerd Font Mono", monospace;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#waybar {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin: 5px 10px 0px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+}
+
+#waybar .modules-container {
+    background-color: transparent;
+}
+
+#hyprland-workspaces button {
+    background: transparent;
+    color: #ffffff;
+    padding: 0 10px;
+    margin: 0 2px;
+}
+
+#hyprland-workspaces button.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+
+#clock,
+#battery,
+#pulseaudio,
+#network,
+#tray,
+#window {
+    background-color: transparent;
+    padding: 0 10px;
+    margin: 0 2px;
+}
+
+#custom-firefox,
+#custom-dolphin,
+#custom-kitty,
+#custom-code,
+#hyprland-workspaces,
+#network {
+    font-family: "JetBrainsMono Nerd Font";
+}
+
+#hyprland-workspaces button {
+    font-family: "JetBrainsMono Nerd Font";
+}
+
+#custom-firefox,
+#custom-dolphin,
+#custom-code,
+#custom-kitty {
+    padding: 0 10px;
+}
+
+tooltip {
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 1px solid #333333;
+    border-radius: 10px;
+}

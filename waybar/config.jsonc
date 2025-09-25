@@ -1,0 +1,95 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 30,
+
+    "modules-left": ["custom/firefox", "custom/dolphin", "custom/kitty", "custom/code",  "hyprland/workspaces", "hyprland/window"],
+    "modules-center": [],
+    "modules-right": ["tray", "battery", "pulseaudio", "network", "clock"],
+
+    "hyprland/workspaces": {
+        "format": "<span>{icon}</span>",
+        "format-icons": {
+            "default": "",
+            "active": "●",
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": ""
+        },
+        "on-click": "activate"
+    },
+    
+    "hyprland/window": {
+        "max-length": 50,
+        "format": "  {title}"
+    },
+
+    "tray": {
+        "icon-size": 18,
+        "spacing": 10
+    },
+
+    "custom/firefox": {
+        "format": "",
+        "tooltip": "false",
+        "on-click": "firefox"
+    },
+
+    "custom/dolphin": {
+        "format": "",
+        "tooltip": "false",
+        "on-click": "dolphin"
+    },
+
+    "custom/kitty": {
+        "format": "",
+        "tooltip": "false",
+        "on-click": "kitty"
+    },
+    
+    "custom/code": {
+        "format": "",
+        "tooltip": "false",
+        "on-click": "code"
+    },
+
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}  {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+
+    "pulseaudio": {
+        "format": "{icon}  {volume}%",
+        "format-muted": " Muted",
+        "format-icons": {
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol",
+        "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-scroll-up": "pamixer --increase 5",
+        "on-scroll-down": "pamixer --decrease 5"
+    },
+
+    "network": {
+        "format-wifi": "  {signal_strength}%",
+        "format-ethernet": "  Wired",
+        "format-disconnected": "⚠  Disconnected"
+    },
+
+
+
+    "clock": {
+        "format": "  {:%I:%M %p}",
+        "tooltip-format": "<big>{:%A, %B %d, %Y}</big>"
+    }
+}
