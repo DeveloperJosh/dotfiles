@@ -33,25 +33,29 @@
 
     "custom/firefox": {
         "format": "",
-        "tooltip": "false",
+        "tooltip": "true",
+	"tooltip-format": "Surf the web like a PRO (Firefox)",
         "on-click": "firefox"
     },
 
     "custom/dolphin": {
         "format": "",
-        "tooltip": "false",
+        "tooltip": "true",
+	"tooltip-format": "The file Manager (Swin like a Dolphin)",
         "on-click": "dolphin"
     },
 
     "custom/kitty": {
         "format": "",
-        "tooltip": "false",
+        "tooltip": "true",
+        "tooltip-format": "The Terminal (Kitty)",
         "on-click": "kitty"
     },
     
     "custom/code": {
         "format": "",
-        "tooltip": "false",
+        "tooltip": "true",
+        "tooltip-format": "Code something (VScode)",
         "on-click": "code"
     },
 
@@ -70,7 +74,7 @@
 
     "pulseaudio": {
         "format": "{icon}  {volume}%",
-        "format-muted": " Muted",
+        "format-muted": "  Muted",
         "format-icons": {
             "default": ["", "", ""]
         },
