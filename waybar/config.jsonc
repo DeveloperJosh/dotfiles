@@ -1,11 +1,11 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 30,
+    "height": 34,
 
-    "modules-left": ["custom/firefox", "custom/dolphin", "custom/kitty", "custom/code",  "hyprland/workspaces", "hyprland/window"],
-    "modules-center": [],
-    "modules-right": ["tray", "battery", "pulseaudio", "network", "clock"],
+    "modules-left": ["custom/firefox", "custom/dolphin", "custom/kitty", "custom/code", "hyprland/workspaces", "hyprland/window"],
+    "modules-center": ["clock"],
+    "modules-right": ["tray", "battery", "pulseaudio", "network", "custom/brightness"],
 
     "hyprland/workspaces": {
         "format": "<span>{icon}</span>",
@@ -34,15 +34,14 @@
     "custom/firefox": {
         "format": "",
         "tooltip": "true",
-	"tooltip-format": "Surf the web like a PRO (Firefox)",
+        "tooltip-format": "Surf the web like a PRO (Firefox)",
         "on-click": "firefox"
     },
 
     "custom/dolphin": {
         "format": "",
         "tooltip": "true",
-	"tooltip-format": "The file Manager (Yazi)",
-        //"on-click": "dolphin"
+        "tooltip-format": "The file Manager (Yazi)",
         "on-click": "kitty yazi"
     },
 
@@ -91,10 +90,18 @@
         "format-disconnected": "⚠  Disconnected"
     },
 
-
-
     "clock": {
         "format": "  {:%I:%M %p}",
         "tooltip-format": "<big>{:%A, %B %d, %Y}</big>"
+    },
+
+    "custom/brightness": {
+        "format": " {}%",
+        "exec": "sh -c \"brightnessctl | grep -o '[0-9]\\{1,3\\}%' | tr -d '%'\"",
+        "interval": 5,
+        "tooltip": true,
+        "tooltip-format": "Brightness: {}%",
+        "on-scroll-up": "brightnessctl set +5%",
+        "on-scroll-down": "brightnessctl set 5%-"
     }
 }

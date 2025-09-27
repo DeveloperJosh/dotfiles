@@ -24,6 +24,7 @@ APPS_TO_INSTALL=(
     "fish"
     "ttf-nerd-fonts-symbols" # Symbols Nerd Font Mono
     "ttf-jetbrains-mono-nerd" # JetBrainsMono Nerd Font
+    "brightnessctl"
 )
 # A subset of apps to check for after installation
 CORE_APPS_TO_CHECK=(

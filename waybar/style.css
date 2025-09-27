@@ -16,11 +16,13 @@
     background-color: transparent;
 }
 
+/* Workspace Buttons */
 #hyprland-workspaces button {
     background: transparent;
     color: #ffffff;
     padding: 0 10px;
     margin: 0 2px;
+    font-family: "JetBrainsMono Nerd Font";
 }
 
 #hyprland-workspaces button.active {
@@ -28,39 +30,48 @@
     border-radius: 10px;
 }
 
+/* Shared Module Styling */
 #clock,
 #battery,
 #pulseaudio,
 #network,
 #tray,
-#window {
+#window,
+#custom-brightness {
     background-color: transparent;
     padding: 0 10px;
     margin: 0 2px;
 }
 
+/* Custom App Launchers */
 #custom-firefox,
 #custom-dolphin,
 #custom-kitty,
-#custom-code,
-#hyprland-workspaces,
-#network {
-    font-family: "JetBrainsMono Nerd Font";
-}
-
-#hyprland-workspaces button {
-    font-family: "JetBrainsMono Nerd Font";
-}
-
-#custom-firefox,
-#custom-dolphin,
-#custom-code,
-#custom-kitty {
+#custom-code {
     padding: 0 10px;
+    font-family: "JetBrainsMono Nerd Font";
 }
 
+/* Tooltip Styling */
 tooltip {
     background-color: rgba(0, 0, 0, 0.8);
     border: 1px solid #333333;
     border-radius: 10px;
+}
+
+/* Optional Hover Effects */
+#clock:hover,
+#battery:hover,
+#pulseaudio:hover,
+#network:hover,
+#custom-brightness:hover,
+#tray:hover,
+#window:hover,
+#custom-firefox:hover,
+#custom-dolphin:hover,
+#custom-kitty:hover,
+#custom-code:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    transition: background-color 0.2s ease-in-out;
 }
