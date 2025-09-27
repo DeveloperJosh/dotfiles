@@ -41,8 +41,9 @@
     "custom/dolphin": {
         "format": "",
         "tooltip": "true",
-	"tooltip-format": "The file Manager (Swin like a Dolphin)",
-        "on-click": "dolphin"
+	"tooltip-format": "The file Manager (Yazi)",
+        //"on-click": "dolphin"
+        "on-click": "kitty yazi"
     },
 
     "custom/kitty": {
