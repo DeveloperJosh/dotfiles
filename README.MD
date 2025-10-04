@@ -19,7 +19,7 @@ These dotfiles configure the following applications to work together seamlessly:
 
 1.  **Clone the repository:**
     ```bash
-    git clone ttps://github.com/DeveloperJosh/dotfiles.git ~/.dotfiles
+    git clone https://github.com/DeveloperJosh/dotfiles.git ~/.dotfiles
     ```
 
 2.  **Run the Install Script:**
