@@ -1,79 +1,35 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 34,
+    "height": 40, 
+    "exclusive": true,
+    "margin-top": 5, 
 
-    "modules-left": ["custom/firefox", "custom/dolphin", "custom/kitty", "custom/code", "hyprland/workspaces", "hyprland/window"],
+    "modules-left": ["custom/firefox", "custom/dolphin", "custom/kitty", "custom/code", "hyprland/workspaces"],
     "modules-center": ["clock"],
-    "modules-right": ["tray", "battery", "pulseaudio", "network", "custom/brightness"],
+    "modules-right": ["tray", "battery", "pulseaudio", "custom/network", "custom/brightness"],
 
     "hyprland/workspaces": {
-        "format": "<span>{icon}</span>",
-        "format-icons": {
-            "default": "",
-            "active": "●",
-            "1": "",
-            "2": "",
-            "3": "",
-            "4": "",
-            "5": ""
-        },
+        "format": "{name}",
         "on-click": "activate"
     },
     
-    "hyprland/window": {
-        "max-length": 50,
-        "format": "  {title}"
-    },
-
-    "tray": {
-        "icon-size": 18,
-        "spacing": 10
-    },
-
-    "custom/firefox": {
-        "format": "",
-        "tooltip": "true",
-        "tooltip-format": "Surf the web like a PRO (Firefox)",
-        "on-click": "firefox"
-    },
-
-    "custom/dolphin": {
-        "format": "",
-        "tooltip": "true",
-        "tooltip-format": "The file Manager (Yazi)",
-        "on-click": "kitty yazi"
-    },
-
-    "custom/kitty": {
-        "format": "",
-        "tooltip": "true",
-        "tooltip-format": "The Terminal (Kitty)",
-        "on-click": "kitty"
-    },
+    "tray": { "icon-size": 16, "spacing": 10 },
+    "custom/firefox": { "format": "", "on-click": "firefox", "tooltip-format": "Surf the web like a PRO (Firefox)" },
+    "custom/dolphin": { "format": "", "on-click": "kitty yazi", "tooltip-format": "The file manager (Yazi)" },
+    "custom/kitty": { "format": "", "on-click": "kitty", "tooltip-format": "The Terminal (Kitty)" },
+    "custom/code": { "format": "", "on-click": "code", "tooltip-format": "Code something (VScode)" },
     
-    "custom/code": {
-        "format": "",
-        "tooltip": "true",
-        "tooltip-format": "Code something (VScode)",
-        "on-click": "code"
-    },
-
     "battery": {
-        "states": {
-            "good": 95,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{icon}  {capacity}%",
-        "format-charging": " {capacity}%",
-        "format-plugged": " {capacity}%",
-        "format-alt": "{time} {icon}",
+        "states": { "good": 95, "warning": 30, "critical": 15 },
+        "format": "{icon}  {capacity}",
+        "format-charging": " {capacity}",
+        "format-plugged": " {capacity}",
         "format-icons": ["", "", "", "", ""]
     },
 
     "pulseaudio": {
-        "format": "{icon}  {volume}%",
+        "format": "{icon}  {volume}",
         "format-muted": "  Muted",
         "format-icons": {
             "default": ["", "", ""]
@@ -84,24 +40,24 @@
         "on-scroll-down": "pamixer --decrease 5"
     },
 
-    "network": {
-        "format-wifi": "  {signal_strength}%",
-        "format-ethernet": "  Wired",
-        "format-disconnected": "⚠  Disconnected"
+    "custom/network": {
+        "format": "{}",
+        "exec": "sh -c 'DEV=$(ip route get 1.1.1.1 | awk \"{print \\$5; exit}\"); if [ -z \"$DEV\" ]; then echo \"⚠ Disconnected\"; else if [ -d \"/sys/class/net/$DEV/wireless\" ]; then echo \" Wi-Fi\"; else echo \"󰈁 Wired\"; fi; fi'",
+        "interval": 5,
+        "on-click": "kitty nmtui"
     },
-
+    
     "clock": {
         "format": "  {:%I:%M %p}",
         "tooltip-format": "<big>{:%A, %B %d, %Y}</big>"
     },
 
     "custom/brightness": {
-        "format": " {}%",
+        "format": " {}",
         "exec": "sh -c \"brightnessctl | grep -o '[0-9]\\{1,3\\}%' | tr -d '%'\"",
         "interval": 5,
-        "tooltip": true,
-        "tooltip-format": "Brightness: {}%",
         "on-scroll-up": "brightnessctl set +5%",
         "on-scroll-down": "brightnessctl set 5%-"
     }
 }
+

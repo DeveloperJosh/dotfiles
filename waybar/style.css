@@ -1,77 +1,101 @@
 * {
     font-family: "JetBrainsMono Nerd Font", "Symbols Nerd Font Mono", monospace;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: bold;
 }
 
 #waybar {
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    margin: 5px 10px 0px 10px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: #ffffff;
-}
-
-#waybar .modules-container {
     background-color: transparent;
 }
 
-/* Workspace Buttons */
-#hyprland-workspaces button {
-    background: transparent;
-    color: #ffffff;
-    padding: 0 10px;
-    margin: 0 2px;
-    font-family: "JetBrainsMono Nerd Font";
+#clock, #battery, #tray, #pulseaudio, #custom-network, #custom-brightness, #workspaces, #custom-firefox, #custom-dolphin, #custom-kitty, #custom-code {
+    background-color: rgba(30, 30, 46, 0.85);
+    color: #cdd6f4;
+    padding: 2px 12px;
+    margin: 3px 0px;
+    border: 1px solid rgba(205, 214, 244, 0.1);
 }
 
-#hyprland-workspaces button.active {
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
-}
-
-/* Shared Module Styling */
-#clock,
-#battery,
-#pulseaudio,
-#network,
-#tray,
-#window,
-#custom-brightness {
-    background-color: transparent;
-    padding: 0 10px;
-    margin: 0 2px;
-}
-
-/* Custom App Launchers */
 #custom-firefox,
 #custom-dolphin,
 #custom-kitty,
 #custom-code {
-    padding: 0 10px;
-    font-family: "JetBrainsMono Nerd Font";
+    padding: 2px 14px;
 }
 
-/* Tooltip Styling */
+#custom-firefox {
+    border-radius: 15px 0 0 15px;
+    border-right-width: 0;
+}
+
+#custom-dolphin,
+#custom-kitty {
+    border-radius: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+}
+
+#custom-code {
+    border-radius: 0 15px 15px 0;
+    margin-right: 8px;
+    border-left-width: 0;
+}
+
+#workspaces {
+    border-radius: 15px;
+    padding: 0;
+}
+
+#workspaces button {
+    color: #cdd6f4;
+    padding: 2px 8px;
+    min-width: 18px;
+}
+
+#workspaces button.active {
+    color: #f9e2af;
+    background-color: rgba(205, 214, 244, 0.1);
+    border-radius: 15px;
+}
+
+#workspaces button:hover {
+    background-color: rgba(205, 214, 244, 0.05);
+    border-radius: 15px;
+}
+
+#clock {
+    border-radius: 15px;
+}
+
+#tray {
+    border-radius: 15px;
+    margin-right: 8px;
+}
+
+#battery {
+    border-radius: 15px 0 0 15px;
+    border-right-width: 0;
+}
+
+#pulseaudio,
+#custom-network {
+    border-radius: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+}
+
+#custom-brightness {
+    border-radius: 0 15px 15px 0;
+    border-left-width: 0;
+}
+
+#clock:hover, #battery:hover, #tray:hover, #pulseaudio:hover, #custom-network:hover, #custom-brightness:hover, #custom-firefox:hover, #custom-dolphin:hover, #custom-kitty:hover, #custom-code:hover {
+    background-color: rgba(49, 50, 68, 0.9);
+    transition: background-color 0.3s ease;
+}
+
 tooltip {
-    background-color: rgba(0, 0, 0, 0.8);
-    border: 1px solid #333333;
-    border-radius: 10px;
-}
-
-/* Optional Hover Effects */
-#clock:hover,
-#battery:hover,
-#pulseaudio:hover,
-#network:hover,
-#custom-brightness:hover,
-#tray:hover,
-#window:hover,
-#custom-firefox:hover,
-#custom-dolphin:hover,
-#custom-kitty:hover,
-#custom-code:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    transition: background-color 0.2s ease-in-out;
+    background-color: rgba(29, 31, 41, 0.9);
+    border: 1px solid #b4befe;
+    border-radius: 15px;
 }
